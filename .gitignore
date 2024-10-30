@@ -21,3 +21,4 @@ tests/PipechainTest1.chain
 *.log
 *.boc
 !tests/samples/SafeMultisigWallet_msg.boc
+/keys.json

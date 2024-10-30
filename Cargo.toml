@@ -1,6 +1,6 @@
 [package]
 build = 'build.rs'
-default-run = 'ton_dev-cli'
+default-run = 'ton-dev-cli'
 description = 'command line tool for TVM blockchain'
 edition = '2021'
 keywords = [ 'TVM', 'SDK', 'smart-contract', 'solidity' ]

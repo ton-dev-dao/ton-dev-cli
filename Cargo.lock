@@ -2973,7 +2973,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_assembler"
 version = "1.8.0"
-source = "git+https://github.com/ton-dev-dao/ton-dev-assembler.git?tag=1.8.0#d614603b975e1020d10586aac867dc9804a63801"
+source = "git+https://github.com/ton-dev-dao/ton-dev-assembler.git?tag=1.8.0#38ea574e67a395fa4cfb3bed94b7b8dd8178953a"
 dependencies = [
  "anyhow",
  "clap 4.5.20",

@@ -1,0 +1,50 @@
+[package]
+build = 'build.rs'
+default-run = 'ton-dev-cli'
+description = 'command line tool for TVM blockchain'
+edition = '2021'
+keywords = [ 'TVM', 'SDK', 'smart-contract', 'solidity' ]
+license = 'Apache-2.0'
+name = 'ton-dev-cli'
+readme = 'README.md'
+repository = 'https://github.com/ton-dev-dao/ton-dev-cli'
+version = '0.41.0'
+
+[dependencies]
+anyhow = '1.0'
+async-trait = '0.1.42'
+base64 = '0.13'
+chrono = '0.4'
+clap = '2.32'
+futures = '0.3'
+hex = '0.4'
+indicatif = '0.17'
+log = { features = [ 'std' ], version = '0.4' }
+num-bigint = '0.4'
+num-traits = '0.2'
+qr2term = '0.2'
+regex = '1.5'
+reqwest = '0.12'
+serde = { features = [ 'derive' ], version = '1.0' }
+serde_derive = '1.0'
+serde_json = '1.0'
+simplelog = '0.8'
+thiserror = '1.0'
+tokio = { default-features = false, features = [ 'full' ], version = '1.21' }
+tokio-retry = '0.3'
+url = '2.3.1'
+ton_dev_abi = { git = 'https://github.com/ton-dev-dao/ton-dev-abi.git', tag = '2.7.11' }
+ton_dev_assembler = { git = 'https://github.com/ton-dev-dao/ton-dev-assembler.git', tag = '1.8.0' }
+ton_dev_block = { git = 'https://github.com/ton-dev-dao/ton-dev-block.git', tag = '1.11.20' }
+ton_dev_block_json = { git = 'https://github.com/ton-dev-dao/ton-dev-block-json.git', tag = '0.9.37' }
+ton_dev_client = { git = 'https://github.com/ton-dev-dao/ton-dev-sdk.git', tag = '1.48.1' }
+ton_dev_executor = { git = 'https://github.com/ton-dev-dao/ton-dev-executor.git', tag = '1.18.22' }
+ton_dev_sdk = { git = 'https://github.com/ton-dev-dao/ton-dev-sdk.git', tag = '1.48.1' }
+ton_dev_vm = { git = 'https://github.com/ton-dev-dao/ton-dev-vm.git', tag = '2.2.21' }
+
+[dev-dependencies]
+assert_cmd = '2.0'
+lazy_static = '1.4'
+predicates = '2.1'
+string-error = '0.1.0'
+

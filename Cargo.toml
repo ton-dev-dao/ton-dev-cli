@@ -1,14 +1,11 @@
 [package]
-authors = [ 'EverX Labs Ltd <support@everx.dev>' ]
 build = 'build.rs'
 default-run = 'ton_dev-cli'
 description = 'command line tool for TVM blockchain'
-documentation = 'https://docs.everos.dev/'
 edition = '2021'
-homepage = 'https://docs.everos.dev/'
 keywords = [ 'TVM', 'SDK', 'smart-contract', 'solidity' ]
 license = 'Apache-2.0'
-name = 'ton_dev-cli'
+name = 'ton-dev-cli'
 readme = 'README.md'
 repository = 'https://github.com/ton-dev-dao/ton-dev-cli'
 version = '0.40.2'

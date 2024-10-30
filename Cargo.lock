@@ -175,7 +175,7 @@ checksum = "c042108f3ed77fd83760a5fd79b53be043192bb3b9dba91d8c574c0ada7850c8"
 [[package]]
 name = "api_derive"
 version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#94db13edb222a3029b12139df742258d7cb6c11a"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#12e192e3b7bad999db5c6dfbe73e58245e61d4ac"
 dependencies = [
  "api_info",
  "proc-macro2",
@@ -187,7 +187,7 @@ dependencies = [
 [[package]]
 name = "api_info"
 version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#94db13edb222a3029b12139df742258d7cb6c11a"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#12e192e3b7bad999db5c6dfbe73e58245e61d4ac"
 dependencies = [
  "serde",
  "serde_derive",
@@ -1536,7 +1536,7 @@ dependencies = [
 [[package]]
 name = "lockfree"
 version = "0.5.2"
-source = "git+https://github.com/everx-labs/lockfree.git#2a30df72944ed48255a97defcd387dd4962f3dd5"
+source = "git+https://github.com/ton-dev-dao/lockfree.git#a9d1811cc234f92a404aa5d166e45f13ff8d5578"
 dependencies = [
  "owned-alloc",
 ]
@@ -2574,7 +2574,7 @@ dependencies = [
 [[package]]
 name = "sodalite"
 version = "0.3.0"
-source = "git+https://github.com/everx-labs/sodalite.git#667f7f01290c95fdbeadc5bce3e32c1d14b92fe1"
+source = "git+https://github.com/ton-dev-dao/sodalite.git#5a1956445ed8822ca1214b6e3c1efbccf237f5c4"
 dependencies = [
  "index-fixed",
  "rand 0.7.3",
@@ -2885,7 +2885,7 @@ dependencies = [
 [[package]]
 name = "ton_api"
 version = "0.4.29"
-source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#0422365a51fef3d7d0b1719ce3e25213e900d938"
+source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#97c0a4de67d54c2d7951a5b023dfd24adaac3fe4"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -2945,7 +2945,7 @@ dependencies = [
 [[package]]
 name = "ton_dev-struct"
 version = "1.1.21"
-source = "git+https://github.com/ton-dev-dao/ton-dev-struct.git?tag=1.1.21#e1a0d24e0fd606f707613d8193a017da423e5bb2"
+source = "git+https://github.com/ton-dev-dao/ton-dev-struct.git?tag=1.1.21#02db8e90ec83f2740bd11bb5d098b0904303dea5"
 dependencies = [
  "anyhow",
  "thiserror",
@@ -2955,7 +2955,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_abi"
 version = "2.7.11"
-source = "git+https://github.com/ton-dev-dao/ton-dev-abi.git?tag=2.7.11#22c7b3259059c6e937f0c248d389cb6f0f111c48"
+source = "git+https://github.com/ton-dev-dao/ton-dev-abi.git?tag=2.7.11#102e2f644707070fe23efaad5cf7d5af2d202b85"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -2973,7 +2973,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_assembler"
 version = "1.8.0"
-source = "git+https://github.com/ton-dev-dao/ton-dev-assembler.git?tag=1.8.0#e71590e10151e4377fcc643a435e4ef46a16c079"
+source = "git+https://github.com/ton-dev-dao/ton-dev-assembler.git?tag=1.8.0#d614603b975e1020d10586aac867dc9804a63801"
 dependencies = [
  "anyhow",
  "clap 4.5.20",
@@ -2991,7 +2991,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_block"
 version = "1.11.20"
-source = "git+https://github.com/ton-dev-dao/ton-dev-block.git?tag=1.11.20#ccfd1dd67660240d7526eb380e3951dc0f9d1da0"
+source = "git+https://github.com/ton-dev-dao/ton-dev-block.git?tag=1.11.20#0a7d270183062a09a69a408cf826c980456f807a"
 dependencies = [
  "aes-ctr",
  "anyhow",
@@ -3021,7 +3021,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_block_json"
 version = "0.9.37"
-source = "git+https://github.com/ton-dev-dao/ton-dev-block-json.git?tag=0.9.37#a2828b2974dae70546ef9a44564b8a9a24818898"
+source = "git+https://github.com/ton-dev-dao/ton-dev-block-json.git?tag=0.9.37#8b7fcacb624116510b0ddc62bca2dea5c6ee8964"
 dependencies = [
  "anyhow",
  "hex 0.4.3",
@@ -3041,7 +3041,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_client"
 version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#94db13edb222a3029b12139df742258d7cb6c11a"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#12e192e3b7bad999db5c6dfbe73e58245e61d4ac"
 dependencies = [
  "aes",
  "anyhow",
@@ -3100,7 +3100,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_client_processing"
 version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#94db13edb222a3029b12139df742258d7cb6c11a"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#12e192e3b7bad999db5c6dfbe73e58245e61d4ac"
 dependencies = [
  "api_derive",
  "api_info",
@@ -3119,7 +3119,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_executor"
 version = "1.18.22"
-source = "git+https://github.com/ton-dev-dao/ton-dev-executor.git?tag=1.18.22#d34898342384f84fc8f49efefbcec55ffcee320c"
+source = "git+https://github.com/ton-dev-dao/ton-dev-executor.git?tag=1.18.22#f47e5934b011a71990fa6c73753f3046699b064c"
 dependencies = [
  "anyhow",
  "lazy_static",
@@ -3132,7 +3132,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_sdk"
 version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#94db13edb222a3029b12139df742258d7cb6c11a"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#12e192e3b7bad999db5c6dfbe73e58245e61d4ac"
 dependencies = [
  "anyhow",
  "api_derive",
@@ -3156,7 +3156,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_vm"
 version = "2.2.21"
-source = "git+https://github.com/ton-dev-dao/ton-dev-vm.git?tag=2.2.21#abcb48463a3e2ca07630ca3f8b3283224e63abe7"
+source = "git+https://github.com/ton-dev-dao/ton-dev-vm.git?tag=2.2.21#d69b7c9f1ed6591fe353eac5ca42468377ef972b"
 dependencies = [
  "anyhow",
  "diffy",
@@ -3174,7 +3174,7 @@ dependencies = [
 [[package]]
 name = "ton_tl_codegen"
 version = "0.1.0"
-source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#0422365a51fef3d7d0b1719ce3e25213e900d938"
+source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#97c0a4de67d54c2d7951a5b023dfd24adaac3fe4"
 dependencies = [
  "crc 1.8.1",
  "pom",

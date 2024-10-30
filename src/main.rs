@@ -144,7 +144,7 @@ async fn main_internal() -> Result<(), String> {
         .help("Function arguments. Must be a list of `--name value` pairs or a json string with all arguments.")
         .multiple(true);
 
-    let author = "EverX";
+    let author = "ton.dev";
 
     let callx_cmd = SubCommand::with_name("callx")
         .about("Sends an external message with encoded function call to the contract (alternative syntax).")
@@ -952,10 +952,10 @@ async fn main_internal() -> Result<(), String> {
         env!("BUILD_GIT_DATE"),
         env!("BUILD_GIT_BRANCH")
     );
-    let matches = App::new("ever_cli")
+    let matches = App::new("ton-dev-cli")
         .version(&*version)
         .author(author)
-        .about("EverX console tool for TON")
+        .about("Console tool for TON")
         .arg(
             Arg::with_name("NETWORK")
                 .help("Network to connect.")

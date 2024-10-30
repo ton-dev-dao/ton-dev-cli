@@ -11,7 +11,7 @@
  * limitations under the License.
  */
 
-use ever_block::Sha256;
+use ton_dev_block::Sha256;
 
 pub fn convert_token(amount: &str) -> Result<String, String> {
     convert_amount(amount, 9)

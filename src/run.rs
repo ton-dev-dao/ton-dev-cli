@@ -24,7 +24,7 @@ use crate::replay::construct_blockchain_config;
 use clap::ArgMatches;
 use ever_abi::token::Tokenizer;
 use ever_abi::Function;
-use ever_block::{Account, Deserializable, Serializable};
+use ton_dev_block::{Account, Deserializable, Serializable};
 use ever_client::abi::FunctionHeader;
 use ever_client::abi::{Abi, StackItemToJson, TokenValueToStackItem};
 use ever_client::tvm::{
@@ -290,7 +290,7 @@ fn prepare_execution_options(bc_config: Option<&str>) -> Result<Option<Execution
     if let Some(config) = bc_config {
         let mut bytes = std::fs::read(config)
             .map_err(|e| format!("Failed to read data from file {config}: {e}"))?;
-        let cell = ever_block::read_single_root_boc(&bytes)
+        let cell = ton_dev_block::read_single_root_boc(&bytes)
             .map_err(|e| format!("Failed to deserialize {config}: {e}"))?;
         if let Ok(acc) = Account::construct_from_cell(cell.clone()) {
             let config = construct_blockchain_config(&acc)?;

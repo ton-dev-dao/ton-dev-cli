@@ -26,13 +26,13 @@ use crate::{
 };
 use clap::{App, Arg, ArgMatches, SubCommand};
 use ever_assembler::DbgInfo;
-use ever_block::CommonMessage::Std;
-use ever_block::{
+use ton_dev_block::CommonMessage::Std;
+use ton_dev_block::{
     Account, CommonMessage, ConfigParamEnum, CurrencyCollection, Deserializable, GasLimitsPrices,
     InRefValue, Message, MsgAddressInt, Serializable, TrComputePhase, Transaction,
     TransactionTickTock,
 };
-use ever_block::{AccountId, Cell, UInt256};
+use ton_dev_block::{AccountId, Cell, UInt256};
 use ever_client::abi::{encode_message, CallSet, FunctionHeader, ParamsOfEncodeMessage, Signer};
 use ever_client::boc::internal::deserialize_cell_from_base64;
 use ever_client::error::ClientError;
@@ -1029,7 +1029,7 @@ pub async fn decode_messages(
             .serialize()
             .map_err(|e| format!("Failed to serialize out message: {}", e))?;
         ser_msg["id"] = msg_cell.repr_hash().as_hex_string().into();
-        let msg_bytes = ever_block::write_boc(&msg_cell)
+        let msg_bytes = ton_dev_block::write_boc(&msg_cell)
             .map_err(|e| format!("failed to encode out message: {e}"))?;
         ser_msg["Message_base64"] = base64::encode(msg_bytes).into();
         let body = &ser_msg["BodyCall"];
@@ -1625,8 +1625,8 @@ async fn make_sequence_diagram(
             .read_description()
             .map_err(|e| format!("Failed to read tr desc: {}", e))?;
         let (tr_color, tr_gas) = match desc.compute_phase_ref() {
-            None | Some(ever_block::TrComputePhase::Skipped(_)) => ("", None),
-            Some(ever_block::TrComputePhase::Vm(tr_compute_phase_vm)) => {
+            None | Some(ton_dev_block::TrComputePhase::Skipped(_)) => ("", None),
+            Some(ton_dev_block::TrComputePhase::Vm(tr_compute_phase_vm)) => {
                 let gas = tr_compute_phase_vm.gas_used.to_string();
                 if tr_compute_phase_vm.success {
                     ("#YellowGreen", Some(gas))

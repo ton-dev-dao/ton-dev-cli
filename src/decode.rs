@@ -19,8 +19,8 @@ use crate::helpers::{
 };
 use crate::{load_abi, print_args};
 use clap::{App, AppSettings, Arg, ArgMatches, SubCommand};
-use ever_block::{read_single_root_boc, write_boc, Cell, SliceData};
-use ever_block::{Account, AccountStatus, Deserializable, Serializable, StateInit};
+use ton_dev_block::{read_single_root_boc, write_boc, Cell, SliceData};
+use ton_dev_block::{Account, AccountStatus, Deserializable, Serializable, StateInit};
 use ever_client::abi::{decode_account_data, ParamsOfDecodeAccountData};
 use serde::Serialize;
 use serde_json::json;
@@ -501,9 +501,9 @@ async fn decode_tvc_command(m: &ArgMatches<'_>, config: &Config) -> Result<(), S
 pub mod msg_printer {
     use crate::helpers::{create_client_local, decode_msg_body, TonClient};
     use crate::Config;
-    use ever_block::write_boc;
-    use ever_block::Cell;
-    use ever_block::{CommonMsgInfo, CurrencyCollection, Grams, Message, StateInit};
+    use ton_dev_block::write_boc;
+    use ton_dev_block::Cell;
+    use ton_dev_block::{CommonMsgInfo, CurrencyCollection, Grams, Message, StateInit};
     use ever_client::boc::{get_compiler_version, ParamsOfGetCompilerVersion};
     use serde_json::{json, Value};
 

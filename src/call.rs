@@ -22,7 +22,7 @@ use crate::message::{
     prepare_message_params, print_encoded_message, unpack_message, EncodedMessage,
 };
 use ever_abi::ParamType;
-use ever_block::{Account, Serializable};
+use ton_dev_block::{Account, Serializable};
 use ever_client::abi::{
     decode_message, encode_message, Abi, ParamsOfDecodeMessage, ParamsOfEncodeMessage,
 };
@@ -131,10 +131,10 @@ pub async fn emulate_locally(
     let state_boc = query_account_field(ton.clone(), addr, "boc").await;
     if state_boc.is_err() {
         if is_fee {
-            let addr = ever_block::MsgAddressInt::from_str(addr)
+            let addr = ton_dev_block::MsgAddressInt::from_str(addr)
                 .map_err(|e| format!("couldn't decode address: {}", e))?;
             state = base64::encode(
-                ever_block::write_boc(&Account::with_address(addr).serialize().map_err(|e| {
+                ton_dev_block::write_boc(&Account::with_address(addr).serialize().map_err(|e| {
                     format!("couldn't create dummy account for deploy emulation: {}", e)
                 })?)
                 .map_err(|e| format!("failed to serialize account cell: {}", e))?,

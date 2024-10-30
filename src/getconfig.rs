@@ -14,11 +14,11 @@
 use crate::config::Config;
 use crate::helpers::{create_client_verbose, now, now_ms, query_with_limit, TonClient};
 use ever_abi::{Contract, Token, TokenValue, Uint};
-use ever_block::{
+use ton_dev_block::{
     ed25519_create_private_key, ed25519_sign_with_secret, BuilderData, Cell, IBitstring, SliceData,
     MAX_SAFE_DEPTH,
 };
-use ever_block::{
+use ton_dev_block::{
     ExternalInboundMessageHeader, Grams, Message, MsgAddressExt, MsgAddressInt, Serializable,
 };
 use ever_client::boc::{get_blockchain_config, ParamsOfGetBlockchainConfig};
@@ -353,7 +353,7 @@ pub async fn gen_update_config_message(
 ) -> Result<(), String> {
     let config_master_address = std::fs::read(&*(config_master_file.to_string() + ".addr"))
         .map_err(|e| format!(r#"failed to read "config_master": {}"#, e))?;
-    let config_account = ever_block::AccountId::from_raw(config_master_address, 32 * 8);
+    let config_account = ton_dev_block::AccountId::from_raw(config_master_address, 32 * 8);
 
     let private_key_of_config_account =
         std::fs::read(&*(config_master_file.to_string() + ".pk"))

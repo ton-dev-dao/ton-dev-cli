@@ -15,7 +15,7 @@ use crate::decode::print_account_data;
 use crate::helpers::{
     check_dir, create_client_verbose, json_account, print_account, query_account_field,
 };
-use ever_block::{Account, Deserializable, Serializable};
+use ton_dev_block::{Account, Deserializable, Serializable};
 use ever_client::error::ClientError;
 use ever_client::net::{
     query_collection, ParamsOfQueryCollection, ParamsOfSubscribeCollection, ResultOfSubscription,

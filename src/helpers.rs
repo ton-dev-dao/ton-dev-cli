@@ -17,7 +17,7 @@ use crate::replay::{construct_blockchain_config, CONFIG_ADDR};
 use crate::SignatureIDType;
 use crate::{resolve_net_name, FullConfig};
 use clap::ArgMatches;
-use ever_block::{
+use ton_dev_block::{
     Account, CurrencyCollection, Deserializable, MsgAddressInt, Serializable, StateInit,
 };
 use ever_client::abi::{

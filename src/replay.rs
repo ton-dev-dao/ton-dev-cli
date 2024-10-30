@@ -22,8 +22,8 @@ use std::{
     sync::{atomic::AtomicU64, Arc},
 };
 
-use ever_block::{write_boc, BuilderData, SliceData, UInt256};
-use ever_block::{
+use ton_dev_block::{write_boc, BuilderData, SliceData, UInt256};
+use ton_dev_block::{
     Account, Block, CommonMessage, ConfigParams, Deserializable, HashmapAugType, Message,
     Serializable, Transaction, TransactionDescr,
 };
@@ -55,7 +55,7 @@ pub fn construct_blockchain_config(config_account: &Account) -> Result<Blockchai
 
 fn construct_blockchain_config_err(
     config_account: &Account,
-) -> ever_block::Result<BlockchainConfig> {
+) -> ton_dev_block::Result<BlockchainConfig> {
     let config_cell = config_account
         .get_data()
         .ok_or(format_err!("Failed to get account's data"))?
@@ -560,7 +560,7 @@ pub async fn replay(
     Err("Specified transaction was not found.".to_string())
 }
 
-pub async fn fetch_block(config: &Config, block_id: &str, filename: &str) -> ever_block::Status {
+pub async fn fetch_block(config: &Config, block_id: &str, filename: &str) -> ton_dev_block::Status {
     let context =
         create_client(config).map_err(|e| format_err!(format!("Failed to create ctx: {}", e)))?;
 

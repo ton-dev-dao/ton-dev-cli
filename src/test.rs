@@ -21,10 +21,10 @@ use crate::helpers::{
 };
 use crate::FullConfig;
 use clap::{App, Arg, ArgMatches, SubCommand};
-use ever_block::{
+use ton_dev_block::{
     ed25519_sign_with_secret, read_single_root_boc, write_boc, BuilderData, SliceData,
 };
-use ever_block::{
+use ton_dev_block::{
     Account, ConfigParams, CurrencyCollection, Deserializable, Message, Serializable, TickTock,
 };
 use ever_client::abi::{

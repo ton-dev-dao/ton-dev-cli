@@ -16,7 +16,7 @@ extern crate core;
 use std::collections::BTreeMap;
 use std::path::PathBuf;
 use serde::{Deserialize, Serialize};
-use ever_client::abi::AbiContract;
+use ton_dev_client::abi::AbiContract;
 
 #[derive(Serialize, Deserialize, Clone)]
 pub struct ContractData {

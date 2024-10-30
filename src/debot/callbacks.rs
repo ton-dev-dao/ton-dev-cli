@@ -15,9 +15,9 @@ use super::{action_input, input, terminal_input, ChainProcessor, ProcessorError}
 use crate::config::Config;
 use crate::convert::convert_u64_to_tokens;
 use crate::helpers::TonClient;
-use ever_client::crypto::SigningBoxHandle;
-use ever_client::debot::{BrowserCallbacks, DAction, DebotActivity, STATE_EXIT};
-use ever_client::error::ClientResult;
+use ton_dev_client::crypto::SigningBoxHandle;
+use ton_dev_client::debot::{BrowserCallbacks, DAction, DebotActivity, STATE_EXIT};
+use ton_dev_client::error::ClientResult;
 use std::collections::VecDeque;
 use std::io;
 use std::sync::{Arc, RwLock};

@@ -5,8 +5,8 @@ use crate::debot::term_encryption_box::{
     EncryptionBoxType, ParamsOfTerminalEncryptionBox, TerminalEncryptionBox,
 };
 use crate::helpers::TonClient;
-use ever_client::debot::{DebotInterface, InterfaceResult};
-use ever_client::{abi::Abi, crypto::EncryptionBoxHandle};
+use ton_dev_client::debot::{DebotInterface, InterfaceResult};
+use ton_dev_client::{abi::Abi, crypto::EncryptionBoxHandle};
 use serde_json::{json, Value};
 use tokio::sync::RwLock;
 

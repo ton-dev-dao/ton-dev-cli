@@ -16,10 +16,10 @@ use crate::crypto::load_keypair;
 use crate::helpers::{create_client_verbose, create_client_with_signature_id, load_abi, now_ms};
 use crate::message::{display_generated_message, EncodedMessage};
 use crate::{Config, SignatureIDType};
-use ever_client::abi::{
+use ton_dev_client::abi::{
     encode_message, Abi, CallSet, DeploySet, FunctionHeader, ParamsOfEncodeMessage, Signer,
 };
-use ever_client::crypto::KeyPair;
+use ton_dev_client::crypto::KeyPair;
 
 pub async fn deploy_contract(
     full_config: &mut FullConfig,

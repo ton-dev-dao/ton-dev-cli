@@ -22,16 +22,16 @@ use crate::helpers::{
 use crate::message::prepare_message;
 use crate::replay::construct_blockchain_config;
 use clap::ArgMatches;
-use ever_abi::token::Tokenizer;
-use ever_abi::Function;
+use ton_dev_abi::token::Tokenizer;
+use ton_dev_abi::Function;
 use ton_dev_block::{Account, Deserializable, Serializable};
-use ever_client::abi::FunctionHeader;
-use ever_client::abi::{Abi, StackItemToJson, TokenValueToStackItem};
-use ever_client::tvm::{
+use ton_dev_client::abi::FunctionHeader;
+use ton_dev_client::abi::{Abi, StackItemToJson, TokenValueToStackItem};
+use ton_dev_client::tvm::{
     run_get, run_solidity_getter, run_tvm, ExecutionOptions, ParamsOfRunGet, ParamsOfRunTvm,
 };
-use ever_vm::stack::integer::IntegerData;
-use ever_vm::stack::StackItem;
+use ton_dev_vm::stack::integer::IntegerData;
+use ton_dev_vm::stack::StackItem;
 use serde_json::{Map, Value};
 
 fn get_address_and_abi_path(
@@ -251,9 +251,9 @@ async fn run_sol_getter(
             .map_err(|e| e.to_string())?;
         stack_items.push(item);
     }
-    let crc = ever_client::crypto::ton_crc16_from_raw_data(method.as_bytes().to_vec());
+    let crc = ton_dev_client::crypto::ton_crc16_from_raw_data(method.as_bytes().to_vec());
     let function_id = ((crc as u32) & 0xffff) | 0x10000;
-    stack_items.push(ever_vm::int!(function_id));
+    stack_items.push(ton_dev_vm::int!(function_id));
 
     let execution_options = prepare_execution_options(bc_config)?;
     let result = run_solidity_getter(

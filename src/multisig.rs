@@ -20,7 +20,7 @@ use crate::helpers::{
     create_client_local, create_client_verbose, load_file_with_url, load_ton_address, now_ms,
 };
 use clap::{App, AppSettings, Arg, ArgMatches, SubCommand};
-use ever_client::abi::{
+use ton_dev_client::abi::{
     encode_message_body, Abi, AbiContract, AbiParam, CallSet, ParamsOfEncodeMessageBody,
 };
 use serde_json::json;

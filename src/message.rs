@@ -16,7 +16,7 @@ use crate::crypto::load_keypair;
 use crate::helpers::{create_client_with_signature_id, load_abi, load_ton_address, now, TonClient};
 use crate::SignatureIDType;
 use chrono::{Local, TimeZone};
-use ever_client::abi::{
+use ton_dev_client::abi::{
     encode_message, Abi, CallSet, FunctionHeader, ParamsOfEncodeMessage, Signer,
 };
 use serde_json::json;

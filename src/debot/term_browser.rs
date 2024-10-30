@@ -14,12 +14,12 @@ use super::term_signing_box::TerminalSigningBox;
 use super::{Callbacks, ChainLink, ChainProcessor, PipeChain, SupportedInterfaces};
 use crate::config::Config;
 use crate::helpers::{create_client, load_abi, load_ton_address, TonClient};
-use ever_client::abi::{
+use ton_dev_client::abi::{
     decode_message, encode_internal_message, Abi, CallSet, ParamsOfDecodeMessage,
     ParamsOfEncodeInternalMessage,
 };
-use ever_client::boc::{parse_message, ParamsOfParse};
-use ever_client::debot::{DEngine, DebotInfo, DebotInterfaceExecutor, DEBOT_WC};
+use ton_dev_client::boc::{parse_message, ParamsOfParse};
+use ton_dev_client::debot::{DEngine, DebotInfo, DebotInterfaceExecutor, DEBOT_WC};
 use serde_json::json;
 use std::collections::{HashMap, VecDeque};
 use std::io::{self, BufRead, Write};

@@ -1,9 +1,9 @@
 use super::dinterface::{decode_answer_id, decode_num_arg, decode_prompt};
 use crate::convert;
 use crate::debot::term_browser::terminal_input;
-use ever_client::abi::Abi;
-use ever_client::debot::{DebotInterface, InterfaceResult};
-use ever_client::encoding::decode_abi_number;
+use ton_dev_client::abi::Abi;
+use ton_dev_client::debot::{DebotInterface, InterfaceResult};
+use ton_dev_client::encoding::decode_abi_number;
 use serde_json::{json, Value};
 
 const ID: &str = "a1d347099e29c1624c8890619daf207bde18e92df5220a54bcc6d858309ece84";

@@ -27,7 +27,7 @@ use ton_dev_block::{
 use ton_dev_block::{
     Account, ConfigParams, CurrencyCollection, Deserializable, Message, Serializable, TickTock,
 };
-use ever_client::abi::{
+use ton_dev_client::abi::{
     encode_internal_message, encode_message, CallSet, DeploySet, FunctionHeader,
     ParamsOfEncodeInternalMessage, ParamsOfEncodeMessage, Signer as AbiSigner,
 };
@@ -461,12 +461,12 @@ pub fn test_config_command(matches: &ArgMatches<'_>, config: &Config) -> Result<
                 .config_params
                 .set_builder(key, &value)
                 .map_err(|e| format!("Failed to store config param with index {index}: {e}"))?;
-            ever_block_json::serialize_config_param(&params, index)
+            ton_dev_block_json::serialize_config_param(&params, index)
                 .map_err(|e| format!("Failed to serialize config param with index {index}: {e}"))?
         } else {
             let params = ConfigParams::construct_from_cell(cell)
                 .map_err(|e| format!("Failed to construct ConfigParams: {e}"))?;
-            ever_block_json::serialize_config_param(&params, 0)
+            ton_dev_block_json::serialize_config_param(&params, 0)
                 .map_err(|e| format!("Failed to serialize config params: {e}"))?
         };
         println!("{}", result);

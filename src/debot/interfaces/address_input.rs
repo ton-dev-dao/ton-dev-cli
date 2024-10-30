@@ -2,8 +2,8 @@ use super::dinterface::{decode_answer_id, decode_prompt};
 use crate::config::Config;
 use crate::debot::term_browser::terminal_input;
 use crate::helpers::load_ton_address;
-use ever_client::abi::Abi;
-use ever_client::debot::{DebotInterface, InterfaceResult};
+use ton_dev_client::abi::Abi;
+use ton_dev_client::debot::{DebotInterface, InterfaceResult};
 use serde_json::{json, Value};
 
 const ID: &str = "d7ed1bd8e6230871116f4522e58df0a93c5520c56f4ade23ef3d8919a984653b";

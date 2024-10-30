@@ -1,6 +1,6 @@
 use super::{ApproveKind, ChainLink, PipeChain};
-use ever_client::abi::{Abi, CallSet};
-use ever_client::debot::DebotActivity;
+use ton_dev_client::abi::{Abi, CallSet};
+use ton_dev_client::debot::DebotActivity;
 use serde_json::Value;
 use std::vec::IntoIter;
 

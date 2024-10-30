@@ -27,11 +27,11 @@ use ton_dev_block::{
     Account, Block, CommonMessage, ConfigParams, Deserializable, HashmapAugType, Message,
     Serializable, Transaction, TransactionDescr,
 };
-use ever_client::net::{
+use ton_dev_client::net::{
     aggregate_collection, query_collection, AggregationFn, FieldAggregation, OrderBy,
     ParamsOfAggregateCollection, ParamsOfQueryCollection, SortDirection,
 };
-use ever_executor::{
+use ton_dev_executor::{
     BlockchainConfig, ExecuteParams, OrdinaryTransactionExecutor, TickTockTransactionExecutor,
     TransactionExecutor,
 };

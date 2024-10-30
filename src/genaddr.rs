@@ -13,7 +13,7 @@
 use crate::config::Config;
 use crate::crypto::{gen_seed_phrase, generate_keypair_from_mnemonic};
 use crate::helpers::{calc_acc_address, create_client_local, load_abi, load_abi_str, read_keys};
-use ever_client::utils::{convert_address, AddressStringFormat, ParamsOfConvertAddress};
+use ton_dev_client::utils::{convert_address, AddressStringFormat, ParamsOfConvertAddress};
 use serde_json::json;
 use std::fs::OpenOptions;
 
@@ -156,8 +156,8 @@ fn update_contract_state(
     data: Option<String>,
     abi: &str,
 ) -> Result<(), String> {
-    use ever_abi::Contract;
-    use ever_sdk::ContractImage;
+    use ton_dev_abi::Contract;
+    use ton_dev_sdk::ContractImage;
     use std::io::{Seek, Write};
 
     let data_map_supported: bool = (Contract::load(abi.as_bytes())

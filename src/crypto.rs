@@ -12,7 +12,7 @@
  */
 use crate::helpers::{check_dir, create_client_local, read_keys, HD_PATH, WORD_COUNT};
 use crate::Config;
-use ever_client::crypto::{
+use ton_dev_client::crypto::{
     hdkey_derive_from_xprv_path, hdkey_secret_from_xprv, hdkey_xprv_from_mnemonic,
     mnemonic_from_random, nacl_sign_keypair_from_secret_key, KeyPair, MnemonicDictionary,
     ParamsOfHDKeyDeriveFromXPrvPath, ParamsOfHDKeySecretFromXPrv, ParamsOfHDKeyXPrvFromMnemonic,

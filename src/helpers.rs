@@ -20,16 +20,16 @@ use clap::ArgMatches;
 use ton_dev_block::{
     Account, CurrencyCollection, Deserializable, MsgAddressInt, Serializable, StateInit,
 };
-use ever_client::abi::{
+use ton_dev_client::abi::{
     Abi, AbiConfig, AbiContract, DecodedMessageBody, DeploySet, ParamsOfDecodeMessageBody,
     ParamsOfEncodeMessage, Signer,
 };
-use ever_client::crypto::{CryptoConfig, KeyPair, MnemonicDictionary};
-use ever_client::error::ClientError;
-use ever_client::net::{query_collection, NetworkConfig, OrderBy, ParamsOfQueryCollection};
-use ever_client::{ClientConfig, ClientContext};
-use ever_executor::BlockchainConfig;
-use ever_vm::executor::{Engine, EngineTraceInfo};
+use ton_dev_client::crypto::{CryptoConfig, KeyPair, MnemonicDictionary};
+use ton_dev_client::error::ClientError;
+use ton_dev_client::net::{query_collection, NetworkConfig, OrderBy, ParamsOfQueryCollection};
+use ton_dev_client::{ClientConfig, ClientContext};
+use ton_dev_executor::BlockchainConfig;
+use ton_dev_vm::executor::{Engine, EngineTraceInfo};
 use serde_json::{json, Value};
 use std::env;
 use std::path::PathBuf;
@@ -236,7 +236,7 @@ pub async fn query_raw(
         .transpose()
         .map_err(|e| format!("Failed to parse order field: {}", e))?;
 
-    let query = ever_client::net::query_collection(
+    let query = ton_dev_client::net::query_collection(
         context.clone(),
         ParamsOfQueryCollection {
             collection: collection.to_owned(),
@@ -329,7 +329,7 @@ pub async fn decode_msg_body(
     config: &Config,
 ) -> Result<DecodedMessageBody, String> {
     let abi = load_abi(abi_path, config).await?;
-    ever_client::abi::decode_message_body(
+    ton_dev_client::abi::decode_message_body(
         ton,
         ParamsOfDecodeMessageBody {
             abi,
@@ -366,12 +366,12 @@ pub async fn load_abi_str(abi_path: &str, config: &Config) -> Result<String, Str
 
 pub async fn load_abi(abi_path: &str, config: &Config) -> Result<Abi, String> {
     let abi_str = load_abi_str(abi_path, config).await?;
-    Ok(ever_client::abi::Abi::Json(abi_str))
+    Ok(ton_dev_client::abi::Abi::Json(abi_str))
 }
 
-pub async fn load_ton_abi(abi_path: &str, config: &Config) -> Result<ever_abi::Contract, String> {
+pub async fn load_ton_abi(abi_path: &str, config: &Config) -> Result<ton_dev_abi::Contract, String> {
     let abi_str = load_abi_str(abi_path, config).await?;
-    ever_abi::Contract::load(abi_str.as_bytes()).map_err(|e| format!("Failed to load ABI: {}", e))
+    ton_dev_abi::Contract::load(abi_str.as_bytes()).map_err(|e| format!("Failed to load ABI: {}", e))
 }
 
 pub async fn load_file_with_url(url: &str, timeout: u64) -> Result<Vec<u8>, String> {
@@ -425,7 +425,7 @@ pub async fn calc_acc_address(
             ..Default::default()
         }
     };
-    let result = ever_client::abi::encode_message(
+    let result = ton_dev_client::abi::encode_message(
         ton.clone(),
         ParamsOfEncodeMessage {
             abi,
@@ -483,7 +483,7 @@ pub async fn print_message(
     if body.is_some() {
         let body = body.unwrap();
         let def_config = Config::default();
-        let result = ever_client::abi::decode_message_body(
+        let result = ton_dev_client::abi::decode_message_body(
             ton.clone(),
             ParamsOfDecodeMessageBody {
                 abi: load_abi(abi, &def_config).await?,
@@ -1065,7 +1065,7 @@ pub fn blockchain_config_from_default_json() -> Result<BlockchainConfig, String>
 }"#;
     let map = serde_json::from_str::<serde_json::Map<String, Value>>(json)
         .map_err(|e| format!("Failed to parse config params as json: {e}"))?;
-    let config_params = ever_block_json::parse_config(&map)
+    let config_params = ton_dev_block_json::parse_config(&map)
         .map_err(|e| format!("Failed to parse config params: {e}"))?;
     BlockchainConfig::with_config(config_params)
         .map_err(|e| format!("Failed to construct default config: {e}"))

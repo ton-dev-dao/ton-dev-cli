@@ -13,7 +13,7 @@
 
 use crate::config::Config;
 use crate::helpers::{create_client_verbose, now, now_ms, query_with_limit, TonClient};
-use ever_abi::{Contract, Token, TokenValue, Uint};
+use ton_dev_abi::{Contract, Token, TokenValue, Uint};
 use ton_dev_block::{
     ed25519_create_private_key, ed25519_sign_with_secret, BuilderData, Cell, IBitstring, SliceData,
     MAX_SAFE_DEPTH,
@@ -21,8 +21,8 @@ use ton_dev_block::{
 use ton_dev_block::{
     ExternalInboundMessageHeader, Grams, Message, MsgAddressExt, MsgAddressInt, Serializable,
 };
-use ever_client::boc::{get_blockchain_config, ParamsOfGetBlockchainConfig};
-use ever_client::net::{OrderBy, SortDirection};
+use ton_dev_client::boc::{get_blockchain_config, ParamsOfGetBlockchainConfig};
+use ton_dev_client::net::{OrderBy, SortDirection};
 use num_bigint::BigUint;
 use serde_json::{json, Value};
 
@@ -422,7 +422,7 @@ pub fn serialize_config_param(config_str: &str) -> Result<(Cell, u32), String> {
         .parse::<u32>()
         .map_err(|e| format!(r#""new_param_file" is not a valid json: {}"#, e))?;
 
-    let config_params = ever_block_json::parse_config(config_json).map_err(|e| {
+    let config_params = ton_dev_block_json::parse_config(config_json).map_err(|e| {
         format!(
             r#"failed to parse config params from "new_param_file": {}"#,
             e

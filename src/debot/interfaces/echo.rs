@@ -1,5 +1,5 @@
-use ever_client::abi::Abi;
-use ever_client::debot::{DebotInterface, InterfaceResult};
+use ton_dev_client::abi::Abi;
+use ton_dev_client::debot::{DebotInterface, InterfaceResult};
 use serde_json::{json, Value};
 
 const ECHO_ID: &str = "f6927c0d4bdb69e1b52d27f018d156ff04152f00558042ff674f0fec32e4369d";

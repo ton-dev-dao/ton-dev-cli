@@ -25,7 +25,7 @@ use crate::{
     contract_data_from_matches_or_config_alias, print_args, unpack_alternative_params, FullConfig,
 };
 use clap::{App, Arg, ArgMatches, SubCommand};
-use ever_assembler::DbgInfo;
+use ton_dev_assembler::DbgInfo;
 use ton_dev_block::CommonMessage::Std;
 use ton_dev_block::{
     Account, CommonMessage, ConfigParamEnum, CurrencyCollection, Deserializable, GasLimitsPrices,
@@ -33,15 +33,15 @@ use ton_dev_block::{
     TransactionTickTock,
 };
 use ton_dev_block::{AccountId, Cell, UInt256};
-use ever_client::abi::{encode_message, CallSet, FunctionHeader, ParamsOfEncodeMessage, Signer};
-use ever_client::boc::internal::deserialize_cell_from_base64;
-use ever_client::error::ClientError;
-use ever_client::net::{query_collection, OrderBy, ParamsOfQueryCollection, SortDirection};
-use ever_executor::{
+use ton_dev_client::abi::{encode_message, CallSet, FunctionHeader, ParamsOfEncodeMessage, Signer};
+use ton_dev_client::boc::internal::deserialize_cell_from_base64;
+use ton_dev_client::error::ClientError;
+use ton_dev_client::net::{query_collection, OrderBy, ParamsOfQueryCollection, SortDirection};
+use ton_dev_executor::{
     BlockchainConfig, ExecuteParams, OrdinaryTransactionExecutor, TickTockTransactionExecutor,
     TransactionExecutor,
 };
-use ever_vm::executor::{EngineTraceInfo, EngineTraceInfoType};
+use ton_dev_vm::executor::{EngineTraceInfo, EngineTraceInfoType};
 use serde_json::{json, Value};
 use std::collections::{HashMap, HashSet};
 use std::fmt;
@@ -1047,7 +1047,7 @@ pub async fn decode_messages(
             Some(TrComputePhase::Vm(compute)) => (compute.exit_code, compute.gas_used.as_u64()),
             _ => (0, 0),
         };
-        // let _tr = match ever_block_json::debug_transaction(tr.clone()) {
+        // let _tr = match ton_dev_block_json::debug_transaction(tr.clone()) {
         //     Ok(tr) => serde_json::from_str::<Value>(&tr).unwrap(),
         //     Err(err) => err.to_string().into()
         // };
@@ -1257,8 +1257,8 @@ pub async fn execute_debug(
         .execute_with_libs_and_params(common_message.as_ref(), account_root, params)
         .map_err(|e| {
             let exit_code = match e.downcast_ref() {
-                Some(ever_executor::ExecutorError::NoAcceptError(exit_code, _)) => *exit_code,
-                None => ever_vm::error::tvm_exception_or_custom_code(&e),
+                Some(ton_dev_executor::ExecutorError::NoAcceptError(exit_code, _)) => *exit_code,
+                None => ton_dev_vm::error::tvm_exception_or_custom_code(&e),
                 _ => return format!("Debug failed: {}", e),
             };
             let result = json!({

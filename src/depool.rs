@@ -21,8 +21,8 @@ use crate::{convert, print_args};
 use clap::{App, AppSettings, Arg, ArgMatches, SubCommand};
 
 use crate::call;
-use ever_client::abi::{CallSet, ParamsOfDecodeMessageBody, ParamsOfEncodeMessageBody};
-use ever_client::net::{
+use ton_dev_client::abi::{CallSet, ParamsOfDecodeMessageBody, ParamsOfEncodeMessageBody};
+use ton_dev_client::net::{
     OrderBy, ParamsOfQueryCollection, ParamsOfWaitForCollection, SortDirection,
 };
 use serde_json::json;
@@ -453,7 +453,7 @@ impl<'a> DepoolCmd<'a> {
         println!("\nMessage was successfully sent to the multisig, waiting for message to be sent to the depool...");
 
         let client = create_client(self.config)?;
-        let message = ever_client::net::wait_for_collection(
+        let message = ton_dev_client::net::wait_for_collection(
             client.clone(),
             ParamsOfWaitForCollection {
                 collection: "messages".to_owned(),
@@ -496,7 +496,7 @@ impl<'a> DepoolCmd<'a> {
             statuses.insert(26, "TRANSFER_WHILE_COMPLETING_STEP");
             statuses.insert(27, "NO_POOLING_STAKE");
 
-            let message = ever_client::net::wait_for_collection(
+            let message = ton_dev_client::net::wait_for_collection(
                 client.clone(),
                 ParamsOfWaitForCollection {
                     collection: "messages".to_owned(),
@@ -680,7 +680,7 @@ async fn answer_command(m: &ArgMatches<'_>, config: &Config, depool: &str) -> Re
     let wallet =
         load_ton_address(&wallet, config).map_err(|e| format!("invalid depool address: {}", e))?;
 
-    let messages = ever_client::net::query_collection(
+    let messages = ton_dev_client::net::query_collection(
         ton.clone(),
         ParamsOfQueryCollection {
             collection: "messages".to_owned(),
@@ -742,7 +742,7 @@ async fn print_event(ton: TonClient, event: &serde_json::Value) -> Result<(), St
         .as_str()
         .ok_or("failed to serialize event body")?;
     let def_config = Config::default();
-    let result = ever_client::abi::decode_message_body(
+    let result = ton_dev_client::abi::decode_message_body(
         ton.clone(),
         ParamsOfDecodeMessageBody {
             abi: load_abi(DEPOOL_ABI, &def_config)
@@ -782,7 +782,7 @@ async fn get_events(config: &Config, depool: &str, since: u32) -> Result<(), Str
     let ton = create_client_verbose(config)?;
     let _addr = load_ton_address(depool, config)?;
 
-    let events = ever_client::net::query_collection(
+    let events = ton_dev_client::net::query_collection(
         ton.clone(),
         ParamsOfQueryCollection {
             collection: "messages".to_owned(),
@@ -809,7 +809,7 @@ async fn wait_for_event(config: &Config, depool: &str) -> Result<(), String> {
     let ton = create_client_verbose(config)?;
     let _addr = load_ton_address(depool, config)?;
     println!("Waiting for a new event...");
-    let event = ever_client::net::wait_for_collection(
+    let event = ton_dev_client::net::wait_for_collection(
         ton.clone(),
         ParamsOfWaitForCollection {
             collection: "messages".to_owned(),
@@ -829,7 +829,7 @@ async fn wait_for_event(config: &Config, depool: &str) -> Result<(), String> {
 async fn encode_body(func: &str, params: serde_json::Value) -> Result<String, String> {
     let client = create_client_local()?;
     let def_config = Config::default();
-    ever_client::abi::encode_message_body(
+    ton_dev_client::abi::encode_message_body(
         client.clone(),
         ParamsOfEncodeMessageBody {
             abi: load_abi(DEPOOL_ABI, &def_config).await?,

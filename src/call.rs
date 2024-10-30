@@ -21,17 +21,17 @@ use crate::debug::{debug_error, init_debug_logger, DebugParams};
 use crate::message::{
     prepare_message_params, print_encoded_message, unpack_message, EncodedMessage,
 };
-use ever_abi::ParamType;
+use ton_dev_abi::ParamType;
 use ton_dev_block::{Account, Serializable};
-use ever_client::abi::{
+use ton_dev_client::abi::{
     decode_message, encode_message, Abi, ParamsOfDecodeMessage, ParamsOfEncodeMessage,
 };
-use ever_client::error::ClientError;
-use ever_client::processing::{
+use ton_dev_client::error::ClientError;
+use ton_dev_client::processing::{
     send_message, wait_for_transaction, ParamsOfProcessMessage, ParamsOfSendMessage,
     ParamsOfWaitForTransaction, ProcessingEvent,
 };
-use ever_client::tvm::{run_executor, AccountForExecutor, ParamsOfRunExecutor};
+use ton_dev_client::tvm::{run_executor, AccountForExecutor, ParamsOfRunExecutor};
 use serde_json::{json, Value};
 use std::str::FromStr;
 
@@ -236,7 +236,7 @@ pub async fn process_message(
         }
     };
     let res = if !config.is_json {
-        ever_client::processing::process_message(
+        ton_dev_client::processing::process_message(
             ton.clone(),
             ParamsOfProcessMessage {
                 message_encode_params: msg.clone(),
@@ -246,7 +246,7 @@ pub async fn process_message(
         )
         .await
     } else {
-        ever_client::processing::process_message(
+        ton_dev_client::processing::process_message(
             ton.clone(),
             ParamsOfProcessMessage {
                 message_encode_params: msg.clone(),

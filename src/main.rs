@@ -48,7 +48,7 @@ use debug::{create_debug_command, debug_command};
 use decode::{create_decode_command, decode_command};
 use deploy::{deploy_contract, generate_deploy_message};
 use depool::{create_depool_command, depool_command};
-use ever_client::abi::{CallSet, ParamsOfEncodeMessageBody};
+use ton_dev_client::abi::{CallSet, ParamsOfEncodeMessageBody};
 use genaddr::generate_address;
 use getconfig::{dump_blockchain_config, query_global_config};
 use helpers::{
@@ -1264,7 +1264,7 @@ async fn body_command(matches: &ArgMatches<'_>, config: &Config) -> Result<(), S
         .map_err(|e| format!("arguments are not in json format: {}", e))?;
 
     let client = create_client_local()?;
-    let body = ever_client::abi::encode_message_body(
+    let body = ton_dev_client::abi::encode_message_body(
         client.clone(),
         ParamsOfEncodeMessageBody {
             abi: load_abi(abi.as_ref().unwrap(), config).await?,

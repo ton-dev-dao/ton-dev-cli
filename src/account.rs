@@ -16,11 +16,11 @@ use crate::helpers::{
     check_dir, create_client_verbose, json_account, print_account, query_account_field,
 };
 use ton_dev_block::{Account, Deserializable, Serializable};
-use ever_client::error::ClientError;
-use ever_client::net::{
+use ton_dev_client::error::ClientError;
+use ton_dev_client::net::{
     query_collection, ParamsOfQueryCollection, ParamsOfSubscribeCollection, ResultOfSubscription,
 };
-use ever_client::utils::{calc_storage_fee, ParamsOfCalcStorageFee};
+use ton_dev_client::utils::{calc_storage_fee, ParamsOfCalcStorageFee};
 use serde_json::{json, Value};
 use std::sync::Arc;
 
@@ -371,7 +371,7 @@ pub async fn wait_for_change(
 ) -> Result<(), String> {
     let context = create_client_verbose(config)?;
 
-    let query = ever_client::net::query_collection(
+    let query = ton_dev_client::net::query_collection(
         context.clone(),
         ParamsOfQueryCollection {
             collection: "accounts".to_owned(),
@@ -412,7 +412,7 @@ pub async fn wait_for_change(
         }
     };
 
-    let subscription = ever_client::net::subscribe_collection(
+    let subscription = ton_dev_client::net::subscribe_collection(
         context.clone(),
         ParamsOfSubscribeCollection {
             collection: "accounts".to_owned(),
@@ -440,7 +440,7 @@ pub async fn wait_for_change(
         .recv()
         .await
         .ok_or_else(|| "Sender has dropped".to_owned())?;
-    ever_client::net::unsubscribe(context.clone(), subscription)
+    ton_dev_client::net::unsubscribe(context.clone(), subscription)
         .await
         .map_err(|e| format!("Failed to unsubscribe: {}", e))?;
 

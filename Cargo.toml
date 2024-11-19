@@ -8,7 +8,7 @@ license = 'Apache-2.0'
 name = 'ton-dev-cli'
 readme = 'README.md'
 repository = 'https://github.com/ton-dev-dao/ton-dev-cli'
-version = '0.41.0'
+version = '0.44.0'
 
 [dependencies]
 anyhow = '1.0'
@@ -33,13 +33,14 @@ thiserror = '1.0'
 tokio = { default-features = false, features = [ 'full' ], version = '1.21' }
 tokio-retry = '0.3'
 url = '2.3.1'
-ton_dev_abi = { git = 'https://github.com/ton-dev-dao/ton-dev-abi.git', tag = '2.7.11' }
+
+ton_dev_abi = { git = 'https://github.com/ton-dev-dao/ton-dev-abi.git', tag = '2.8.1' }
 ton_dev_assembler = { git = 'https://github.com/ton-dev-dao/ton-dev-assembler.git', tag = '1.8.0' }
 ton_dev_block = { git = 'https://github.com/ton-dev-dao/ton-dev-block.git', tag = '1.11.20' }
 ton_dev_block_json = { git = 'https://github.com/ton-dev-dao/ton-dev-block-json.git', tag = '0.9.37' }
-ton_dev_client = { git = 'https://github.com/ton-dev-dao/ton-dev-sdk.git', tag = '1.48.1' }
+ton_dev_client = { git = 'https://github.com/ton-dev-dao/ton-dev-sdk.git', tag = '1.49.1' }
 ton_dev_executor = { git = 'https://github.com/ton-dev-dao/ton-dev-executor.git', tag = '1.18.22' }
-ton_dev_sdk = { git = 'https://github.com/ton-dev-dao/ton-dev-sdk.git', tag = '1.48.1' }
+ton_dev_sdk = { git = 'https://github.com/ton-dev-dao/ton-dev-sdk.git', tag = '1.49.1' }
 ton_dev_vm = { git = 'https://github.com/ton-dev-dao/ton-dev-vm.git', tag = '2.2.21' }
 
 [dev-dependencies]

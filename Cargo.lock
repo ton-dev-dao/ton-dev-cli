@@ -174,8 +174,8 @@ checksum = "4c95c10ba0b00a02636238b814946408b1322d5ac4760326e6fb8ec956d85775"
 
 [[package]]
 name = "api_derive"
-version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#01640afe2edeaefd4b1a60cfe28563630c9c4b5d"
+version = "1.49.1"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.49.1#b79e2b5e308e524c30d575f4a2c30755b16dae7c"
 dependencies = [
  "api_info",
  "proc-macro2",
@@ -186,8 +186,8 @@ dependencies = [
 
 [[package]]
 name = "api_info"
-version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#01640afe2edeaefd4b1a60cfe28563630c9c4b5d"
+version = "1.49.1"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.49.1#b79e2b5e308e524c30d575f4a2c30755b16dae7c"
 dependencies = [
  "serde",
  "serde_derive",
@@ -379,9 +379,9 @@ dependencies = [
 
 [[package]]
 name = "bstr"
-version = "1.10.0"
+version = "1.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "40723b8fb387abc38f4f4a37c09073622e41dd12327033091ef8950659e6dc0c"
+checksum = "1a68f1f47cdf0ec8ee4b941b2eee2a80cb796db73118c0dd09ac63fbe405be22"
 dependencies = [
  "memchr",
  "regex-automata",
@@ -414,9 +414,9 @@ checksum = "9ac0150caa2ae65ca5bd83f25c7de183dea78d4d366469f148435e2acfbad0da"
 
 [[package]]
 name = "cc"
-version = "1.1.37"
+version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "40545c26d092346d8a8dab71ee48e7685a7a9cba76e634790c215b41a4a7b4cf"
+checksum = "fd9de9f2205d5ef3fd67e685b0df337994ddd4495e2a28d185500d0e1edfea47"
 dependencies = [
  "jobserver",
  "libc",
@@ -487,15 +487,15 @@ dependencies = [
  "bitflags 1.3.2",
  "strsim 0.8.0",
  "textwrap",
- "unicode-width",
+ "unicode-width 0.1.14",
  "vec_map",
 ]
 
 [[package]]
 name = "clap"
-version = "4.5.20"
+version = "4.5.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b97f376d85a664d5837dbae44bf546e6477a679ff6610010f17276f686d867e8"
+checksum = "fb3b4b9e5a7c7514dfa52869339ee98b3156b0bfb4e8a77c4ff4babb64b1604f"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -503,9 +503,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.20"
+version = "4.5.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "19bc80abd44e4bed93ca373a0704ccbd1b710dc5749406201bb018272808dc54"
+checksum = "b17a95aa67cc7b5ebd32aa5370189aa0d79069ef1c64ce893bd30fb24bff20ec"
 dependencies = [
  "anstream",
  "anstyle",
@@ -527,9 +527,9 @@ dependencies = [
 
 [[package]]
 name = "clap_lex"
-version = "0.7.2"
+version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1462739cb27611015575c0c11df5df7601141071f07518d56fcc1be504cbec97"
+checksum = "afb84c814227b90d6895e01398aee0d8033c00e7466aca416fb6a8e0eb19d8a7"
 
 [[package]]
 name = "colorchoice"
@@ -546,7 +546,7 @@ dependencies = [
  "encode_unicode",
  "lazy_static",
  "libc",
- "unicode-width",
+ "unicode-width 0.1.14",
  "windows-sys 0.52.0",
 ]
 
@@ -602,9 +602,9 @@ checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
 
 [[package]]
 name = "cpufeatures"
-version = "0.2.14"
+version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "608697df725056feaccfa42cffdaeeec3fccc4ffc38358ecd19b243e716a78e0"
+checksum = "0ca741a962e1b0bff6d724a1a0958b686406e853bb14061f218562e1896f95e6"
 dependencies = [
  "libc",
 ]
@@ -1077,9 +1077,9 @@ dependencies = [
 
 [[package]]
 name = "h2"
-version = "0.4.6"
+version = "0.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "524e8ac6999421f49a846c2d4411f337e53497d8ec55d67753beffa43c5d9205"
+checksum = "ccae279728d634d083c00f6099cb58f01cc99c145b84b8be2f6c74618d79922e"
 dependencies = [
  "atomic-waker",
  "bytes",
@@ -1276,14 +1276,14 @@ dependencies = [
 
 [[package]]
 name = "hyper"
-version = "1.5.0"
+version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bbbff0a806a4728c99295b254c8838933b5b082d75e3cb70c8dab21fdfbcfa9a"
+checksum = "97818827ef4f364230e16705d4706e2897df2bb60617d6ca15d598025a3c481f"
 dependencies = [
  "bytes",
  "futures-channel",
  "futures-util",
- "h2 0.4.6",
+ "h2 0.4.7",
  "http 1.1.0",
  "http-body 1.0.1",
  "httparse",
@@ -1315,7 +1315,7 @@ checksum = "70206fc6890eaca9fde8a0bf71caa2ddfc9fe045ac9e5c70df101a7dbde866e0"
 dependencies = [
  "bytes",
  "http-body-util",
- "hyper 1.5.0",
+ "hyper 1.5.1",
  "hyper-util",
  "native-tls",
  "tokio",
@@ -1334,7 +1334,7 @@ dependencies = [
  "futures-util",
  "http 1.1.0",
  "http-body 1.0.1",
- "hyper 1.5.0",
+ "hyper 1.5.1",
  "pin-project-lite",
  "socket2",
  "tokio",
@@ -1532,24 +1532,15 @@ dependencies = [
 
 [[package]]
 name = "indicatif"
-version = "0.17.8"
+version = "0.17.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "763a5a8f45087d6bcea4222e7b72c291a054edf80e4ef6efd2a4979878c7bea3"
+checksum = "cbf675b85ed934d3c67b5c5469701eec7db22689d0a2139d856e0925fa28b281"
 dependencies = [
  "console",
- "instant",
  "number_prefix",
  "portable-atomic",
- "unicode-width",
-]
-
-[[package]]
-name = "instant"
-version = "0.1.13"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e0242819d153cba4b4b05a5a8f2a7e9bbf97b6055b2a002b395c96b5ff3c0222"
-dependencies = [
- "cfg-if",
+ "unicode-width 0.2.0",
+ "web-time",
 ]
 
 [[package]]
@@ -1605,9 +1596,9 @@ checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 
 [[package]]
 name = "libc"
-version = "0.2.162"
+version = "0.2.164"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "18d287de67fe55fd7e1581fe933d965a5a9477b38e949cfa9f8574ef01506398"
+checksum = "433bfe06b8c75da9b2e3fbea6e5329ff87748f0b144ef75306e674c3f6f7c13f"
 
 [[package]]
 name = "libsecp256k1"
@@ -1682,7 +1673,7 @@ dependencies = [
 [[package]]
 name = "lockfree"
 version = "0.5.2"
-source = "git+https://github.com/ton-dev-dao/lockfree.git#588aa99c3f8c42bcff460164bb2ee73e0e9815c0"
+source = "git+https://github.com/ton-dev-dao/lockfree.git#506ed55a37fa0a01d1f74c1ea64cd354eede9c15"
 dependencies = [
  "owned-alloc",
 ]
@@ -2169,11 +2160,11 @@ checksum = "33cb294fe86a74cbcf50d4445b37da762029549ebeea341421c7c70370f86cac"
 
 [[package]]
 name = "publicsuffix"
-version = "2.2.3"
+version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96a8c1bda5ae1af7f99a2962e49df150414a43d62404644d98dd5c3a93d07457"
+checksum = "6f42ea446cab60335f76979ec15e12619a2165b5ae2c12166bef27d283a9fadf"
 dependencies = [
- "idna 0.3.0",
+ "idna 1.0.3",
  "psl-types",
 ]
 
@@ -2299,9 +2290,9 @@ dependencies = [
 
 [[package]]
 name = "regex-automata"
-version = "0.4.8"
+version = "0.4.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "368758f23274712b504848e9d5a6f010445cc8b87a7cdb4d7cbee666c1288da3"
+checksum = "809e8dc61f6de73b46c85f4c96486310fe304c434cfa43669d7b40f711150908"
 dependencies = [
  "aho-corasick",
  "memchr",
@@ -2367,11 +2358,11 @@ dependencies = [
  "encoding_rs",
  "futures-core",
  "futures-util",
- "h2 0.4.6",
+ "h2 0.4.7",
  "http 1.1.0",
  "http-body 1.0.1",
  "http-body-util",
- "hyper 1.5.0",
+ "hyper 1.5.1",
  "hyper-tls 0.6.0",
  "hyper-util",
  "ipnet",
@@ -2421,9 +2412,9 @@ dependencies = [
 
 [[package]]
 name = "rustix"
-version = "0.38.39"
+version = "0.38.41"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "375116bee2be9ed569afe2154ea6a99dfdffd257f533f187498c2a8f5feaf4ee"
+checksum = "d7f649912bc1495e167a6edee79151c84b1bad49748cb4f1f1167f459f6224f6"
 dependencies = [
  "bitflags 2.6.0",
  "errno",
@@ -2473,9 +2464,9 @@ dependencies = [
 
 [[package]]
 name = "schannel"
-version = "0.1.26"
+version = "0.1.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "01227be5826fa0690321a2ba6c5cd57a19cf3f6a09e76973b58e61de6ab9d1c1"
+checksum = "1f29ebaa345f945cec9fbbc532eb307f0fdad8161f281b6369539c8d84876b3d"
 dependencies = [
  "windows-sys 0.59.0",
 ]
@@ -2538,18 +2529,18 @@ checksum = "61697e0a1c7e512e84a621326239844a24d8207b4669b41bc18b32ea5cbf988b"
 
 [[package]]
 name = "serde"
-version = "1.0.214"
+version = "1.0.215"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f55c3193aca71c12ad7890f1785d2b73e1b9f63a0bbc353c08ef26fe03fc56b5"
+checksum = "6513c1ad0b11a9376da888e3e0baa0077f1aed55c17f50e7b2397136129fb88f"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.214"
+version = "1.0.215"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de523f781f095e28fa605cdce0f8307e451cc0fd14e2eb4cd2e98a355b147766"
+checksum = "ad1e866f866923f252f05c889987993144fb74e722403468a4ebd70c3cd756c0"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2558,9 +2549,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.132"
+version = "1.0.133"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d726bfaff4b320266d395898905d0eba0345aae23b54aee3a737e260fd46db03"
+checksum = "c7fceb2473b9166b2294ef05efcb65a3db80803f0b03ef86a5fc88a2b85ee377"
 dependencies = [
  "indexmap",
  "itoa",
@@ -2720,7 +2711,7 @@ dependencies = [
 [[package]]
 name = "sodalite"
 version = "0.3.0"
-source = "git+https://github.com/ton-dev-dao/sodalite.git#7f8c77249cc46f79454c0d07c87a4c90a9ce1064"
+source = "git+https://github.com/ton-dev-dao/sodalite.git#01454640ac0856a83c6169d0b4a1d21e5f6f229c"
 dependencies = [
  "index-fixed",
  "rand 0.7.3",
@@ -2860,23 +2851,23 @@ version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
 dependencies = [
- "unicode-width",
+ "unicode-width 0.1.14",
 ]
 
 [[package]]
 name = "thiserror"
-version = "1.0.68"
+version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "02dd99dc800bbb97186339685293e1cc5d9df1f8fae2d0aecd9ff1c77efea892"
+checksum = "b6aaf5339b578ea85b50e080feb250a3e8ae8cfcdff9a461c9ec2904bc923f52"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.68"
+version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a7c61ec9a6f64d2793d8a45faba21efbe3ced62a886d44c36a009b2b519b4c7e"
+checksum = "4fee6c4efc90059e10f81e6d42c60a18f76588c3d74cb83a0b242a2b6c7504c1"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3057,7 +3048,7 @@ dependencies = [
 
 [[package]]
 name = "ton-dev-cli"
-version = "0.41.0"
+version = "0.44.0"
 dependencies = [
  "anyhow",
  "assert_cmd",
@@ -3098,7 +3089,7 @@ dependencies = [
 [[package]]
 name = "ton_api"
 version = "0.4.29"
-source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#682816076b7265787e9752caf7c2ad91eb9528e6"
+source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#a8260523af95ded3ddc7c35700dde56c9c78eece"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -3118,7 +3109,7 @@ dependencies = [
 [[package]]
 name = "ton_dev-struct"
 version = "1.1.21"
-source = "git+https://github.com/ton-dev-dao/ton-dev-struct.git?tag=1.1.21#319a2ecbca3acc3a849f054106e8d4c4c7b5dc49"
+source = "git+https://github.com/ton-dev-dao/ton-dev-struct.git?tag=1.1.21#a4ba098375cfccced2e309077ed50e94998cd3b6"
 dependencies = [
  "anyhow",
  "thiserror",
@@ -3127,8 +3118,8 @@ dependencies = [
 
 [[package]]
 name = "ton_dev_abi"
-version = "2.7.11"
-source = "git+https://github.com/ton-dev-dao/ton-dev-abi.git?tag=2.7.11#05a57206595d7bb66a9260b5807d75d5bb4547af"
+version = "2.8.1"
+source = "git+https://github.com/ton-dev-dao/ton-dev-abi.git?tag=2.8.1#43a031aad2c36610926116a9894157b0f975ace1"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -3146,10 +3137,10 @@ dependencies = [
 [[package]]
 name = "ton_dev_assembler"
 version = "1.8.0"
-source = "git+https://github.com/ton-dev-dao/ton-dev-assembler.git?tag=1.8.0#b1450a196bf8ca02de270744789df0566e19043c"
+source = "git+https://github.com/ton-dev-dao/ton-dev-assembler.git?tag=1.8.0#af771ce551a315f5cf3762f1096cdea2c475138a"
 dependencies = [
  "anyhow",
- "clap 4.5.20",
+ "clap 4.5.21",
  "hex 0.4.3",
  "log",
  "num",
@@ -3164,7 +3155,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_block"
 version = "1.11.20"
-source = "git+https://github.com/ton-dev-dao/ton-dev-block.git?tag=1.11.20#bfb29260721b01399ae585b49f443c5046f7653e"
+source = "git+https://github.com/ton-dev-dao/ton-dev-block.git?tag=1.11.20#425bf3730eae6e79eaffa1b2f808aa598ff70f2a"
 dependencies = [
  "aes-ctr",
  "anyhow",
@@ -3194,7 +3185,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_block_json"
 version = "0.9.37"
-source = "git+https://github.com/ton-dev-dao/ton-dev-block-json.git?tag=0.9.37#322faa54109159402f9c9cc48d08b61ac665e27e"
+source = "git+https://github.com/ton-dev-dao/ton-dev-block-json.git?tag=0.9.37#2e6fd09a4c1db132fa516b1ab93d0f98c7ee53dc"
 dependencies = [
  "anyhow",
  "hex 0.4.3",
@@ -3213,8 +3204,8 @@ dependencies = [
 
 [[package]]
 name = "ton_dev_client"
-version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#01640afe2edeaefd4b1a60cfe28563630c9c4b5d"
+version = "1.49.1"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.49.1#b79e2b5e308e524c30d575f4a2c30755b16dae7c"
 dependencies = [
  "aes",
  "anyhow",
@@ -3272,8 +3263,8 @@ dependencies = [
 
 [[package]]
 name = "ton_dev_client_processing"
-version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#01640afe2edeaefd4b1a60cfe28563630c9c4b5d"
+version = "1.49.1"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.49.1#b79e2b5e308e524c30d575f4a2c30755b16dae7c"
 dependencies = [
  "api_derive",
  "api_info",
@@ -3292,7 +3283,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_executor"
 version = "1.18.22"
-source = "git+https://github.com/ton-dev-dao/ton-dev-executor.git?tag=1.18.22#fee4f044826b8948c1ce6eb3445e1915f18e83b9"
+source = "git+https://github.com/ton-dev-dao/ton-dev-executor.git?tag=1.18.22#c1f190709c04becd5568311240072262c7f35886"
 dependencies = [
  "anyhow",
  "lazy_static",
@@ -3304,8 +3295,8 @@ dependencies = [
 
 [[package]]
 name = "ton_dev_sdk"
-version = "1.48.1"
-source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.48.1#01640afe2edeaefd4b1a60cfe28563630c9c4b5d"
+version = "1.49.1"
+source = "git+https://github.com/ton-dev-dao/ton-dev-sdk.git?tag=1.49.1#b79e2b5e308e524c30d575f4a2c30755b16dae7c"
 dependencies = [
  "anyhow",
  "api_derive",
@@ -3329,7 +3320,7 @@ dependencies = [
 [[package]]
 name = "ton_dev_vm"
 version = "2.2.21"
-source = "git+https://github.com/ton-dev-dao/ton-dev-vm.git?tag=2.2.21#8d216f9876bfe004265eabaf2aa4bcab9794a991"
+source = "git+https://github.com/ton-dev-dao/ton-dev-vm.git?tag=2.2.21#a283b3d065139123c78dbcfba21b11511b34b582"
 dependencies = [
  "anyhow",
  "diffy",
@@ -3347,7 +3338,7 @@ dependencies = [
 [[package]]
 name = "ton_tl_codegen"
 version = "0.1.0"
-source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#682816076b7265787e9752caf7c2ad91eb9528e6"
+source = "git+https://github.com/ton-dev-dao/ton-dev-tl.git?tag=0.4.29#a8260523af95ded3ddc7c35700dde56c9c78eece"
 dependencies = [
  "crc 1.8.1",
  "pom",
@@ -3441,6 +3432,12 @@ name = "unicode-width"
 version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af"
+
+[[package]]
+name = "unicode-width"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fc81956842c57dac11422a97c3b8195a1ff727f06e85c84ed2e8aa277c9a0fd"
 
 [[package]]
 name = "url"
@@ -3597,6 +3594,16 @@ name = "web-sys"
 version = "0.3.72"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f6488b90108c040df0fe62fa815cbdee25124641df01814dd7282749234c6112"
+dependencies = [
+ "js-sys",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "web-time"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5a6580f308b1fad9207618087a65c04e7a10bc77e02c8e84e9b00dd4b12fa0bb"
 dependencies = [
  "js-sys",
  "wasm-bindgen",
